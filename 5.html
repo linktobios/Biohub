@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manish Kumar | Premium Bio Websites & Web Tools</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --primary: #ff6700;
+  --primary-hover: #e05a00;
+  --glass: rgba(255, 255, 255, 0.5);
+  --glass-hover: rgba(255, 255, 255, 0.8);
+  --border: rgba(255, 255, 255, 0.7);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  --text: #1a1a1a;
+  --text-muted: #555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(255, 103, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(255, 103, 0, 0.35);
+}
+
+/* GLASS CARD BASE */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass:hover {
+  background: var(--glass-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: #ffffff;
+}
+
+/* GENERAL SECTION */
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+
+/* GRID LAYOUT */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* TEMPLATE/PROJECT CARDS */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-wrapper {
+  width: 100%;
+  height: 300px; /* Increased from 180px for taller images */
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.card a {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--primary);
+  text-decoration: none;
+  transition: gap 0.3s ease;
+  gap: 5px;
+}
+
+.card:hover a {
+  gap: 10px;
+}
+
+/* FEATURES LIST */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.feature-item {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 24px;
+}
+
+.feature-item i {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* CTA SECTION */
+.cta {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+/* STICKY WHATSAPP BUTTON */
+.sticky {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  padding: 15px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.sticky:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* SCROLL ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  font-weight: 500;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero fade show">
+  <h1>🚀 Premium Web Tools & Custom Creator Pages</h1>
+  <p>I build high-converting Bio Pages for Influencers and scalable Web Applications.</p>
+  <a href="#templates" class="btn">View My Work <i class="fa-solid fa-arrow-down"></i></a>
+</section>
+
+<section class="section fade" id="templates">
+  <h2 class="title">🔥 My Work & Templates</h2>
+
+  <div class="grid">
+
+    <div class="glass card">
+      <div class="card-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop" alt="Moto Vlog Bio">
+      </div>
+      <h3>Moto Vlogger Bio</h3>
+      <p>Premium glassmorphism link-in-bio page with YouTube integration and custom gear accordion.</p>
+      <a href="#">Live Demo <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="glass card">
+      <div class="card-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Land Area Calculator">
+      </div>
+      <h3>Land Area Calculator</h3>
+      <p>SEO-optimized web platform for precise land measurement and area division.</p>
+      <a href="https://landareacalculator.in" target="_blank">Visit Site <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="glass card">
+      <div class="card-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" alt="Digital Guniya">
+      </div>
+      <h3>Digital Guniya</h3>
+      <p>Advanced web-based tool for accurate land surveying and measuring maps directly from PDFs.</p>
+      <a href="#">Try Tool <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="glass card">
+      <div class="card-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=600&auto=format&fit=crop" alt="Cadastra">
+      </div>
+      <h3>Cadastra (.cds)</h3>
+      <p>Robust land surveying software application using a custom file extension for secure data management.</p>
+      <a href="#">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section fade">
+  <h2 class="title">⚡ Why Work With Me?</h2>
+
+  <div class="features">
+    <div class="glass feature-item">
+      <i class="fa-solid fa-bolt"></i>
+      Fast Loading
+    </div>
+    <div class="glass feature-item">
+      <i class="fa-solid fa-mobile-screen-button"></i>
+      Mobile Optimized
+    </div>
+    <div class="glass feature-item">
+      <i class="fa-solid fa-paintbrush"></i>
+      Premium Custom UI
+    </div>
+    <div class="glass feature-item">
+      <i class="fa-solid fa-magnifying-glass-chart"></i>
+      SEO Friendly
+    </div>
+  </div>
+</section>
+
+<section class="cta fade">
+  <h2>Ready to upgrade your online presence?</h2>
+  <p>Send me a message to get your custom website or web tool built today.</p>
+  <a href="https://wa.me/91XXXXXXXXXX" class="btn">Get Started Now</a>
+</section>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="sticky">
+  <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Chat
+</a>
+
+<footer>
+  Made with ❤️ by Manish Kumar
+</footer>
+
+<script>
+/* IMPROVED SCROLL ANIMATION */
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // Animates only once for better performance
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
