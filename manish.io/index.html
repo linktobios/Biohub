@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>link-to-bio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --text-main: #000000;
+            --text-light: #555555;
+            --btn-bg: #e2e2e2;
+            --border-color: #7a7a7a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header & Profile Section */
+        .header-wrapper {
+            position: relative;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .signature-bg {
+            position: absolute;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.08);
+            white-space: nowrap;
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -80%);
+            pointer-events: none;
+        }
+
+        .main-name {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 5px;
+            margin-top: 5px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px var(--border-color);
+            margin: 0 auto 20px auto; 
+            display: block;
+            filter: grayscale(100%);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 22px;
+            margin-bottom: 35px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            color: var(--text-main);
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.15);
+            color: var(--text-light);
+        }
+
+        /* Website Pills Section */
+        .website-pills-row {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .website-pill {
+            background-color: #ffffff;
+            color: #3b3531;
+            text-decoration: none;
+            padding: 16px 10px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid transparent;
+            flex: 1;
+        }
+
+        .website-pill i {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .website-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Social Media Pills Section */
+        .social-pills-section {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .social-pills-title {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .social-pills-title::before,
+        .social-pills-title::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ccc;
+            margin: 0 10px;
+        }
+
+        .social-pills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+        }
+
+        /* Social media pills */
+        .social-pill-btn {
+            background-color: #ffffff;
+            color: #3b3531;
+            text-decoration: none;
+            padding: 18px 24px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid transparent;
+        }
+
+        .social-pill-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .social-pill-btn i {
+            font-size: 24px;
+            width: 35px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-pill-btn span {
+            flex-grow: 1;
+            text-align: center;
+            padding-right: 35px;
+            font-weight: 500;
+        }
+
+        /* Main Link Button - removed, so container hidden */
+        .main-link-container {
+            display: none;
+        }
+
+        /* Footer Styles */
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            width: 100%;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Heart Breathing Animation */
+        .footer .heart {
+            color: #e74c3c;
+            font-size: 1rem;
+            margin: 0 4px;
+            display: inline-block;
+            animation: breathe 1.5s infinite ease-in-out;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        .footer span {
+            opacity: 0.8;
+        }
+
+        /* Icon colors (optional) */
+        .social-pill-btn .fa-instagram { color: #E4405F; }
+        .social-pill-btn .fa-youtube { color: #FF0000; }
+        .social-pill-btn .fa-facebook-f { color: #1877F2; }
+        .social-pill-btn .fa-threads { color: #000000; }
+        .social-pill-btn .fa-x-twitter { color: #000000; }
+        .social-pill-btn .fa-whatsapp { color: #25D366; }
+
+        .website-pill .fa-globe { color: #2c3e50; }
+        .website-pill .fa-link { color: #2c3e50; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header-wrapper">
+            <div class="signature-bg">Manish Kumar</div>
+            <h1 class="main-name">MANISH KUMAR</h1>
+            <p class="subtitle">DIGITAL CREATOR & VLOGGER</p>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Profile Picture" class="profile-pic">
+
+        <div class="social-icons">
+            <a href="https://instagram.com/manish.io_" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com/@microscopic_universe?si=kgZdElgLeTWQeeA5" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/919693982501" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://x.com/manishxyz659?s=21" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="mailto:manishxyz659@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+
+        <div class="website-pills-row">
+            <a href="https://linktobios.github.io/Bio/" class="website-pill" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-globe"></i>
+                <span>Website</span>
+            </a>
+            <a href="https://www.landareacalculator.in" class="website-pill" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-link"></i>
+                <span>Website</span>
+            </a>
+        </div>
+
+        <div class="social-pills-section">
+            <div class="social-pills-title">✦ CONNECT WITH ME ✦</div>
+            <div class="social-pills-grid">
+                <a href="https://instagram.com/manish.io_" class="social-pill-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://youtube.com/@microscopic_universe?si=YgWdVj-rasYsUvDF" class="social-pill-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="social-pill-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-pill-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-threads"></i>
+                    <span>Threads</span>
+                </a>
+                <a href="https://x.com/manishxyz659?s=21" class="social-pill-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <span>X (Twitter)</span>
+                </a>
+                <a href="https://wa.me/919693982501" class="social-pill-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Developed with <span class="heart">♥️</span> by Manish</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
